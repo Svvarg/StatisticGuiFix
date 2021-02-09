@@ -22,7 +22,7 @@ import org.apache.logging.log4j.LogManager;
 @SideOnly(Side.CLIENT)
 public class StatGuiEventHandler {
     public static final Logger LOG = LogManager.getLogger("StatGuiFix");
-    
+    boolean fixed;
     /**
      * Statistics Gui fix portal 90 -1 if of
      * find the best way to fix
@@ -40,7 +40,11 @@ public class StatGuiEventHandler {
                 int b = fixGuiStatListItemBased(net.minecraft.stats.StatList.itemStats);
                 //EntityList.EntityEggInfo
                 int c = fixGuiStatEntityList();
-                LOG.log(Level.INFO, "[####] ObjectMine:{} Item:{} Entity:{}", a, b, c);
+                if (!fixed) {
+                    //the counter displays the number of detected objects that crash the gui
+                    /*DEBUG*/LOG.log(Level.INFO, "[##StatGuiFix##] ObjectMine:{} Item:{} Entity:{}", a, b, c);
+                    fixed = true;
+                }
             }
         }
     }
