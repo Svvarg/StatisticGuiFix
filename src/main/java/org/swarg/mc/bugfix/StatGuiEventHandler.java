@@ -11,13 +11,18 @@ import net.minecraft.stats.StatCrafting;
 import net.minecraft.stats.StatList;
 import net.minecraft.item.Item;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 /**
  * 05-02-21
  * @author Swarg
  */
 @SideOnly(Side.CLIENT)
 public class StatGuiEventHandler {
-
+    public static final Logger LOG = LogManager.getLogger("StatGuiFix");
+    
     /**
      * Statistics Gui fix portal 90 -1 if of
      * find the best way to fix
@@ -35,7 +40,7 @@ public class StatGuiEventHandler {
                 int b = fixGuiStatListItemBased(net.minecraft.stats.StatList.itemStats);
                 //EntityList.EntityEggInfo
                 int c = fixGuiStatEntityList();
-                /*DEBUG*/System.out.printf("a:%s, b:%s, c:%s", a, b, c);
+                LOG.log(Level.INFO, "[####] ObjectMine:{} Item:{} Entity:{}", a, b, c);
             }
         }
     }
