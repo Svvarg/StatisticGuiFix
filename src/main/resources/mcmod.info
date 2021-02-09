@@ -1,0 +1,16 @@
+[
+{
+  "modid": "StatisticGuiFix",
+  "name": "Statistic Gui Fix",
+  "description": "Fixing an crash that occurs when opening the Statistic Gui on the client",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Swarg"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
